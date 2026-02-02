@@ -58,19 +58,20 @@ def classify(text):
         "느낀점": []
     }
 
-
   for s in sentences:
-        if any(k in s for k in ["때문", "이유", "어려워", "필요", "위해"]):
-            result["동기"].append(s)
-        elif any(k in s for k in ["설명", "풀이", "활동", "발표", "수업", "참여"]):
-            result["행동"].append(s)
-        elif any(k in s for k in ["향상", "능력", "성장", "결과", "효과"]):
-            result["결론"].append(s)
+        if any(k in s for k in ["수업", "설명", "풀이", "활동", "발표", "수행","보고서","토론","시연","시뮬레이션","나타냄","증명","참여"]):
+            result["행동"] += s + ". "
+        elif any(k in s for k in ["때문", "이유", "어려워", "동기", "하므로","이므로","위해","위해서","필요"]):
+            result["동기"] += s + ". "
+        elif any(k in s for k in ["향상", "성장", "깨달", "이해", "결론","결과","도출","능력"]):
+            result["결론"] += s + ". "
+        elif any(k in s for k in ["교과서", "자료", "논문", "p.","도서", "페이지"]):
+            result["참고"] += s + ". "
         else:
-            result["느낀점"].append(s)
+            result["느낀점"] += s + ". "
 
     return result
-
+  
 
 
 
