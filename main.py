@@ -142,3 +142,15 @@ if text.strip():
     for key in ["행동", "동기", "결론", "참고", "느낀점"]:
         if classified[key]:
             st.write(f"{icons[key]} " + " ".join(classified[key]))
+
+
+
+
+st.markdown(
+    "<hr style='margin-top:40px'>"
+    "<p style='text-align:center; color:gray; font-size:14px;'>"
+    "🛠️ made by 서재원"
+    "</p>",
+    unsafe_allow_html=True
+)
+
