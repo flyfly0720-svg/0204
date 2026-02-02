@@ -58,7 +58,8 @@ def classify(text):
         "느낀점": []
     }
 
-    for s in sentences:
+
+  for s in sentences:
         if any(k in s for k in ["때문", "이유", "어려워", "필요", "위해"]):
             result["동기"].append(s)
         elif any(k in s for k in ["설명", "풀이", "활동", "발표", "수업", "참여"]):
@@ -69,6 +70,9 @@ def classify(text):
             result["느낀점"].append(s)
 
     return result
+
+
+
 
 # ======================
 # 실행 (입력 1번 → 전부)
